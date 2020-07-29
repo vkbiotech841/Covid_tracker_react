@@ -66,3 +66,18 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+### axios was used for fetching covid data.
+
+covid Api: 'https://covid19.mathdro.id/api';
+
+### Material UI was used.
+
+npm install --save @material-ui/core
+
+### CountUp npm package for showing counter increament animation.
+
+### cx classnames was imported for using multiple css classes.
+
+### eact-chartjs-2 was used for graphical representation.
