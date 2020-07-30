@@ -4,9 +4,9 @@ import React, { Component } from 'react';
 // import Chart from './components/Chart/Chart';
 // import CountryPicker from './components/CountryPicker/CountryPicker';
 
-import { Cards, Chart, CountryPicker } from './components/index';
+import { Cards, Chart, CountryPicker } from './components/export_component';
 import styles from './App.module.css';
-import { fetchData } from './api/index';
+import { fetchData } from './api/api';
 
 import coronaImage from './images/covid_19.png';
 
