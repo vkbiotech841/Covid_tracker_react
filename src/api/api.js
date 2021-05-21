@@ -1,16 +1,25 @@
 import axios from 'axios';
+import { baseApiUrl } from './base_api_url';
 
-const url = 'https://covid19.mathdro.id/api';
+// we can consume REST APIs using two of the most popular methods known as Axios (a promise-based HTTP client) and 
+// Fetch API (a browser in-built web API). 
+
+// Axios is promise-based and thus we can take advantage of async and await for more readable asynchronous code. We can also intercept and 
+// cancel requests, and there’s built-in client side protection against cross site request forgery.
+
+const url = baseApiUrl.covidTracker;
 
 export const fetchData = async (country) => {
     let changeableUrl = url;
 
     if (country) {
-        changeableUrl = `${url}/countries/${country}`
+        changeableUrl = `${url}/countries/${country}`;
     };
 
+    // We can use URL method to create a new url object.
     try {
-        const { data } = await axios.get(changeableUrl);
+        const finalUrl = new URL(changeableUrl);
+        const { data } = await axios.get(finalUrl.href);
         const modifiedData = {
             confirmed: data.confirmed,
             recovered: data.recovered,
@@ -19,10 +28,9 @@ export const fetchData = async (country) => {
         };
         return modifiedData;
     } catch (error) {
-        console.log(error);
+        console.log("error", error);
     }
-};
-
+}
 
 export const fetchDailyData = async () => {
     try {

@@ -18,6 +18,7 @@ class App extends Component {
         country: '',
     };
 
+    // ComponentDidMout is very similar to Oninit() method in angular framework.
     async componentDidMount() {
         const fetchedData = await fetchData();
         this.setState({ data: fetchedData })
